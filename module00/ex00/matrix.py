@@ -101,6 +101,3 @@ class Vector(Matrix):
         dot_product = sum(self.data[0][i] * v.data[0][i] for i in range(self.shape[1]))
         return dot_product
 
-
-m1 = Matrix([[1.0, 2.0], [3.0, 4.0]], [3, 4])
-print(m1.matrix_data)
