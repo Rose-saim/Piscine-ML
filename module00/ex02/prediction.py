@@ -13,8 +13,11 @@ def simple_predict(x, theta):
     """
     if x.size == 0 or theta.size == 0 or theta.shape != (2, ):
         return None
+    y_hat = np.zeros(x.size)
     # Initialize an array  
-    theta_0_values = np.empty_like(x, dtype=float)
+    for i in x:
+        y_hat[i] = theta[0] + theta[1] * x[i]
+    return y_hat
  
 
 x = np.arange(1,6)

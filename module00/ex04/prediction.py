@@ -20,3 +20,27 @@ def predict_(x, theta):
         X = np.concatenate((ones, X), axis=1)
         return np.matmul(X , theta)
     return None
+
+
+    x = np.arange(1, 6)
+    # x = [1, 2, 3, 4, 5]
+
+    theta1 = np.array([5, 0])
+    y_hat = predict_(x, theta1)
+    print(y_hat)
+    # array([5., 5., 5., 5., 5.])
+
+    theta2 = np.array([0, 1])
+    y_hat = predict_(x, theta2)
+    print(y_hat)
+    # array([1., 2., 3., 4., 5.])
+
+    theta3 = np.array([5, 3])
+    y_hat = predict_(x, theta3)
+    print(y_hat)
+    # array([ 8., 11., 14., 17., 20.])
+
+    theta4 = np.array([-3, 1])
+    y_hat = predict_(x, theta4)
+    print(y_hat)
+    # array([-2., -1.,  0.,  1.,  2.])
