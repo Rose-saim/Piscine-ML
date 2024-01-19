@@ -59,48 +59,14 @@ def confusion_matrix_(y_true, y_hat, labels=None, df_option=False):
 
 if __name__ == "__main__":
 
-    y_hat = np.array([['norminet'],
-                      ['dog'],
-                      ['norminet'],
-                      ['norminet'],
-                      ['dog'],
-                      ['bird']])
+    y_true=np.array(['a', 'b', 'c'])
+    y_hat=np.array(['a', 'b', 'c'])
+    print(confusion_matrix_(y_true, y_hat))
+    y_true=np.array(['a', 'b', 'c'])
+    y_hat=np.array(['c', 'a', 'b'])
+    print(confusion_matrix_(y_true, y_hat))
 
-    y = np.array([['dog'],
-                  ['dog'],
-                  ['norminet'],
-                  ['norminet'],
-                  ['dog'],
-                  ['norminet']])
-
-    # Example 1:
-    # your implementation
-    print(confusion_matrix_(y, y_hat))
-    # Output:
-    # array([[0 0 0]
-    #        [0 2 1]
-    #        [1 0 2]])
-    # sklearn implementation
-    print(confusion_matrix(y, y_hat))
-    # Output:
-    # array([[0 0 0]
-    #        [0 2 1]
-    #        [1 0 2]])
-
-    # Example 2:
-    # your implementation
-    print(confusion_matrix_(y, y_hat, labels=['dog', 'norminet']))
-    # Output:
-    # array([[2 1]
-    #        [0 2]])
-    # sklearn implementation
-    print(confusion_matrix(y, y_hat, labels=['dog', 'norminet']))
-    # Output:
-    # array([[2 1]
-    #        [0 2]])
-
-    # Example 3:
-    print(confusion_matrix_(y, y_hat, df_option=True))
-
-    # Example 4:
-    print(confusion_matrix_(y, y_hat, labels=['bird', 'dog'], df_option=True))
+    y_true=np.array(['a', 'a', 'a'])
+    y_hat=np.array(['a', 'a', 'a'])
+    print(confusion_matrix_(y_true, y_hat))
+    print(confusion_matrix_(y_true, y_hat, labels=[]))
